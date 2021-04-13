@@ -1,37 +1,37 @@
 package com.company;
+public class Main
+{
+    int num1;
+    public int myclass(){
+//int $num2;
+//int case;//class is a java keyword and we can't use those as identifiers
+        int num5="Lydia";
+        //got an error to change variable type to string
+        float _num3=20.2;
+// got error as illegal datatype as it is a long and declared as float
+        int num4=(num1+num5+_num3);
+        System.out.println(num2);//global variable for int without initialize it gives 0
+// got an error for not initializing num2
+        system.out.println(9num4);
+        // system class must be capitalized
+//int 9num4; error as not a statement(illegal declaration)
 
-import java.util.Scanner;
-
-public class Main {
+        for(int k=0;k<10;k++){
+            if(k==7)
+            {
+                break;
+            }
+            else if(k==5)
+            {
+                System.out.println("This is five");
+                continue;
+            }
+            System.out.println(k);
+        }
+        return 0;
+    }
     public static void main(String[] args) {
-        //ever legal java program has an entry point, this is ours
-        // the entry point is your main method
-        //    public static void main(String[] args) {
-        //        System.out.println("Hello, World!");
-        //Use the variables below to compose the following paragraph:
-        //name, adjective, verbOne, verbTwo, number, yourName
-        // Dear name,
-        // You are adverb adjective and I want to be your noun!
-        // I want to go to the nounTwo with you in number days.
-        //Sincerely, yourName
-        // Make a scanner
-        Scanner input = new Scanner(System.in);
-        System.out.println("What is the name?");
-        String name = input.nextLine();
-        System.out.println("Enter an adjective:");
-        String adjective = input.nextLine();
-        System.out.println("Enter a noun");
-//     putting a lowercase "s" would throw an error because class names should be capitalized
-        String nounOne = input.nextLine();
-        System.out.println("Enter another noun");
-        String nounTwo = input.nextLine();
-        System.out.println("Enter your name?");
-        String yourName = input.nextLine();
-        System.out.println("Enter a number");
-        int number = input.nextInt();
-        System.out.printf("Dear %s\n", name);
-        System.out.printf("You are %s and I want to be your %s! I want to go to the %s with you in %d days.\n",
-                adjective, nounOne, nounTwo, number);
-        System.out.printf("Sincerely,\n%s\n", yourName);
+        Main m = new Main();
+        m.mymethod();
     }
 }
