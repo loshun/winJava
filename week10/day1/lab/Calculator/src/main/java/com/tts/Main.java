@@ -3,36 +3,115 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        int num1;
-        int num2;
-        int ans;
-        char op;
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a number: ");
-        num1 = scanner.nextInt();
-        System.out.println("Enter another number: ");
-        num2 = scanner.nextInt();
-        System.out.println("\nEnter an operator (+, -, *, /, ^): ");
-        op = scanner.next().charAt(0);
+    Scanner kb = new Scanner(System.in);
 
-        switch (op) {
-            case '+': ans = num1 + num2;
-            break;
-            case '-': ans = num1 - num2;
-            break;
-            case '*': ans = num1 * num2;
-            break;
-            case '/': ans = num1 / num2;
-            break;
-            case '^': ans = num1 * num1;
-            break;
-            default:
-                System.out.println("Error! Please Enter Correct Operator");
-                return;
-        }
-        System.out.println("\nThe answer is:\n ");
-        System.out.println(num1 + " " + op + " " + num2 + " = " + ans);
+        System.out.println("Simple Calculator");
 
+        System.out.println("\nHere are your options:");
+        System.out.println("\n1. addition");
+        System.out.println("2. subtraction");
+        System.out.println("3. division");
+        System.out.println("4. multiplication");
+        System.out.println("5. square");
+
+    //this is a bad question to ask seeing as they need to choose a number... I will specify this in MagicCalculator.java
+        System.out.print("\nWhat would you like to do?: ");
+    int choice = kb.nextInt();
+        System.out.println();
+
+        if (choice == 1) {
+        Addition();
+    } else if (choice == 2) {
+        Subtraction();
+    } else if (choice == 3) {
+        Division();
+    } else if (choice == 4) {
+        Multiplication();
+    } else if (choice == 5) {
+        Square();
+    }
+
+        System.out.println();
+        kb.close();
+}
+
+    public static void Addition() {
+
+        int nOne, nTwo;
+        Scanner kb = new Scanner(System.in);
+
+        System.out.println("Addition");
+
+        System.out.print("\nFirst Number: ");
+        nOne = kb.nextInt();
+
+        System.out.print("\nSecond Number: ");
+        nTwo = kb.nextInt();
+
+        kb.close();
+        System.out.println("\nSum: " + nOne + " + " + nTwo + " = " + (nOne + nTwo));
+    }
+
+    public static void Subtraction() {
+        int nOne, nTwo;
+        Scanner kb = new Scanner(System.in);
+
+        System.out.println("Subtraction");
+
+        System.out.print("\nFirst Number: ");
+        nOne = kb.nextInt();
+
+        System.out.print("\nSecond Number: ");
+        nTwo = kb.nextInt();
+
+        kb.close();
+        System.out.println("\nSum: " + nOne + " - " + nTwo + " = " + (nOne - nTwo));
+    }
+
+    public static void Division() {
+        int nOne, nTwo;
+        Scanner kb = new Scanner(System.in);
+
+        System.out.println("Division");
+
+        System.out.print("\nFirst Number: ");
+        nOne = kb.nextInt();
+
+        System.out.print("\nSecond Number: ");
+        nTwo = kb.nextInt();
+
+        kb.close();
+        System.out.println("\nSum: " + nOne + " / " + nTwo + " = " + (nOne / nTwo));
+    }
+
+    public static void Multiplication() {
+        int nOne, nTwo;
+        Scanner kb = new Scanner(System.in);
+
+        System.out.println("Multiplication");
+
+        System.out.print("\nFirst Number: ");
+        nOne = kb.nextInt();
+
+        System.out.print("\nSecond Number: ");
+        nTwo = kb.nextInt();
+
+        kb.close();
+        System.out.println("\nSum: " + nOne + " x " + nTwo + " = " + (nOne * nTwo));
+    }
+
+    public static void Square() {
+
+        int nOne;
+        Scanner kb = new Scanner(System.in);
+
+        System.out.println("Square");
+
+        System.out.print("\nNumber: ");
+        nOne = kb.nextInt();
+
+        kb.close();
+        System.out.println("\nSquared Value: " + nOne + " ^2 " + " = " + (nOne * nOne));
     }
 }
