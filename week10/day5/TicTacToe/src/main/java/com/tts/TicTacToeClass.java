@@ -50,8 +50,7 @@ public class TicTacToeClass {
     public boolean isCat()
     {
         if (turns>=9&&(!isWinner('X'))&&(!isWinner('O')))
-            //{System.out.println("It's a tie!");
-            return true;//}
+            return true;
         return false;
     }
 
