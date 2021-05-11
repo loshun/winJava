@@ -4,14 +4,14 @@ import java.util.List;
 
 public class AddressBook {
     //The diamond operators "<" and ">" specify which type of Objects the List will hold
-    private List<AddressBookEntry> listOfEntries;
+    private List<Entry> listOfEntries;
 
     public AddressBook() {
         //initialize list of entries
         this.listOfEntries = new ArrayList<>();
     }
 
-    public void add(AddressBookEntry addressBookEntry) {
+    public void add(Entry addressBookEntry) {
         //List.add adds a new Object to a List
         this.listOfEntries.add(addressBookEntry);
     }
@@ -21,14 +21,14 @@ public class AddressBook {
         this.listOfEntries.remove(index);
     }
 
-    public AddressBookEntry get(int index) {
+    public Entry get(int index) {
         //List.get(int index) returns the object at the given index
         return this.listOfEntries.get(index);
     }
 
-    public AddressBookEntry[] viewAll() {
+    public Entry[] viewAll() {
         //create a new array with the size of our list
-        AddressBookEntry[] result = new AddressBookEntry[this.listOfEntries.size()];
+        Entry[] result = new Entry[this.listOfEntries.size()];
 
         //List.toArray(Arr[] array) fills our array with data from the list
         this.listOfEntries.toArray(result);
