@@ -1,6 +1,7 @@
 package com.tts;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class AddressBook {
     //The diamond operators "<" and ">" specify which type of Objects the List will hold
@@ -16,14 +17,18 @@ public class AddressBook {
         this.listOfEntries.add(addressBookEntry);
     }
 
-    public void delete(int index) {
+    public void delete(String email) {
         //List.remove(int index) removes a object at the given index
-        this.listOfEntries.remove(index);
-    }
 
-    public Entry get(int index) {
+        listOfEntries.removeIf(e->e.getEmail().equals(email));
+
+    }
+//
+
+
+    public void look(String email) {
         //List.get(int index) returns the object at the given index
-        return this.listOfEntries.get(index);
+        this.listOfEntries.stream().filter(e->e.getEmail().equals(email)).forEach(System.out::println);
     }
 
     public Entry[] viewAll() {
@@ -35,5 +40,8 @@ public class AddressBook {
 
         //return the filled array
         return result;
+    }
+    public void deleteAll(){
+        this.listOfEntries.removeAll(listOfEntries);
     }
 }

@@ -1,8 +1,11 @@
 package com.tts;
 import java.util.*;
 
+import java.util.*;
+
 public class Main extends Entry {
     public static int entryInput;
+
 
     public static void main(String[] args) {
         AddressBook newAddy = new AddressBook();
@@ -35,39 +38,32 @@ public class Main extends Entry {
 
             } else if (entryInput == 2) {
                 // Remove an entry
-
-//                Entry[] listOfEntries = newAddy.viewAll();
-//
-//                for (int i = 1; i < listOfEntries.length + 1; i++) {
-//                    System.out.println(listOfEntries[i].toString());
-//                }
-//
-                System.out.println("Please select the entry number you would like to remove.");
-                newAddy.delete(sc.nextInt());
-
+                System.out.println("Enter email: \n");
+                String input = sc.next();
+                newAddy.delete(input);
 
             } else if (entryInput == 3) {
                 // Search for an entry
+                System.out.println("Enter email: \n");
+                String search = sc.next();
+                newAddy.look(search);
+
 
 
             } else if (entryInput == 4) {
                 // Printing the address book
-                System.out.println(newAddy.toString());
-                if (newAddy != null){
-                    Entry[] listOfEntries = newAddy.viewAll();
 
-                    for (int i = 0; i < listOfEntries.length; i++) {
-                        System.out.println(listOfEntries[i].toString());
-                    }}
-                else
-                    System.out.println("Address book is empty!");
+                Entry[] listOfEntries = newAddy.viewAll();
 
+                for (int i = 0; i < listOfEntries.length; i++) {
+                    System.out.println(listOfEntries[i].toString());
+                }
             } else if (entryInput == 5) {
                 //Deleting the address book
 
-                newAddy = null;
+                newAddy.deleteAll();
                 System.out.println("Address book has been successfully cleared.");
-                System.out.println(newAddy);
+
             } else if(entryInput > 6 | entryInput < 1){
                 System.out.println("Invalid response, please try again.");
             }
