@@ -63,6 +63,12 @@ public class Customer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName);
+        int result = id.hashCode();
+        result = 31 * result + firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        return result;
     }
+
+
+
 }
