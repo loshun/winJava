@@ -44,12 +44,12 @@ public class BookController {
     }
 
     @PutMapping("/{id}")
-    public Book updateBook(@RequestBody Book book, @PathVariable Long id){
+    public Book updateBook(@RequestBody Book book, @PathVariable Long id) throws BookIdMisMatchException {
         if(book.getId() != id){
             throw new BookIdMisMatchException();
         }
         bookRepository.findById(id)
-         .orElseThrow(BookNotFoundException::new);
+                .orElseThrow(BookNotFoundException::new);
         return bookRepository.save(book);
     }
 }

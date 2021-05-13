@@ -1,8 +1,11 @@
 package com.tts.demo.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

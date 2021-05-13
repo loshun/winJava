@@ -20,7 +20,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
                 new HttpHeaders(), HttpStatus.NOT_FOUND, request);
     }
 
-    @ExceptionHandler({ BookIdMismatchException.class,
+    @ExceptionHandler({ BookIdMisMatchException.class,
             ConstraintViolationException.class,
             DataIntegrityViolationException.class })
     public ResponseEntity<Object> handleBadRequest(
