@@ -11,13 +11,23 @@ public class BlogPostServiceImpl implements BlogPostService {
     @Autowired
     BlogPostRepository blogPostRepository;
 
-//    lines 11&12 can also be written as follows
 //    public BlogPostServiceImpl(BlogPostRepository blogPostRepository) {
 //        this.blogPostRepository = blogPostRepository;
 //    }
 
     @Override
-    public BlogPost addNewBlogPost(BlogPost blogPost){
+    public BlogPost addNewBlogPost(BlogPost blogPost) {
         return blogPostRepository.save(blogPost);
     }
+
+    @Override
+    public Iterable<BlogPost> getAllBlogPosts() {
+        return blogPostRepository.findAll();
+    }
+
+    @Override
+    public void deletePostById(Long id) {
+        blogPostRepository.deleteById(id);
+    }
+
 }
