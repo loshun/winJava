@@ -18,7 +18,10 @@ import java.util.List;
 public class TweetController {
     @Autowired
     private UserService userService;
+
+    @Autowired
     private TweetService tweetService;
+
 
     @GetMapping(value= {"/tweets", "/"})
     public String getFeed(Model model){
