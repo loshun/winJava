@@ -39,5 +39,13 @@
     </div>
   </form>
 </div>
+
+<div th:if="${success}" class="container">
+  <div th:text="${success}"></div>
+  <form th:action="@{~/login}" method="get">
+    <button class="btn btn-md btn-primary twitter-btn m-3" type="Submit" >Log In</button>
+  </form>
+</div>
+
 </body>
 </html>

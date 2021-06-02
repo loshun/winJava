@@ -45,6 +45,7 @@ public class TweetService {
     }
 
     public void save(Tweet tweet) {
+        handleTags(tweet);
         tweetRepository.save(tweet);
     }
 
