@@ -20,13 +20,14 @@
 @<span th:text="${user.username}"></span></span></h2>
   <!-- add more code here -->
   <h5>Joined <span th:text="${#dates.format(user.createdAt, 'MMMM dd, yyyy')}"></span></h5>
+
 <!--below is my follow and unfollow button-->
-  <form th:action="@{/follow/} + ${user.username}" th:if="${!following}" method="post">
-    <button style="float:right" type="Submit" class="btn btn-lg btn-success">Follow</button>
-  </form>
-  <form th:action="@{/unfollow/} + ${user.username}" th:if="${following}" method="post">
-    <button style="float:right" type="Submit" class="btn btn-lg btn-primary unfollow_btn">Following</button>
-  </form>
+<!--  <form th:action="@{/follow/} + ${user.username}" th:if="${!following}" method="post">-->
+<!--    <button style="float:right" type="Submit" class="btn btn-lg btn-success">Follow</button>-->
+<!--  </form>-->
+<!--  <form th:action="@{/unfollow/} + ${user.username}" th:if="${following}" method="post">-->
+<!--    <button style="float:right" type="Submit" class="btn btn-lg btn-primary unfollow_btn">Following</button>-->
+<!--  </form>-->
 
   <div th:if="${not #lists.isEmpty(tweetList)}">
     <h3>Tweets</h3>
@@ -38,7 +39,7 @@
     <div class="list-group-item list-group-item-action">
       <div class="d-flex w-100 justify-content-between">
         <h5>@<span th:text="${tweet.user.username}"></span>
-          <small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}"></span></small></h5>
+          <small><span th:text="${tweet.date}"></span></small></h5>
       </div>
       <p class="mb-1" th:utext="${tweet.message}"></p>
     </div>
